@@ -1,0 +1,14 @@
+
+<%- include('partials/header.ejs') %>
+<%- include('partials/sidebar.ejs') %>
+
+  <h1>Home Page</h1>
+
+  <p class="paragaraph">Lorem ipsum dolor sit amet consectetur adipisicing elit. Corrupti odio, magni quaerat nulla quibusdam id consequatur. Necessitatibus voluptate deleniti soluta laboriosam. Ipsam cum nulla, cupiditate earum possimus ut inventore illum, ex ab exercitationem esse molestias corporis tempora maxime id. Error sint eligendi provident, autem dolor obcaecati excepturi, doloremque nisi dicta placeat repudiandae debitis? Tempore accusamus velit maxime labore officiis nemo ab recusandae iste quae exercitationem, est alias illo, cupiditate minima voluptatum laboriosam corporis! Illo, ratione sapiente sint excepturi consequatur ducimus quidem. Minus quam ipsam, sit debitis accusantium cupiditate repellat excepturi eaque doloremque cum cumque earum consequatur illum consectetur quia! Rem temporibus assumenda fugiat explicabo in, reiciendis, corrupti inventore dicta, repudiandae perspiciatis doloribus. Commodi, dolor delectus! Reprehenderit soluta velit error autem cum enim ad tempora veritatis dolor aliquam cupiditate perferendis, eum mollitia quibusdam aut explicabo id commodi, accusamus optio! Cumque at officia perferendis quas facere corporis qui unde accusamus. Modi omnis dolor exercitationem delectus reprehenderit nihil tempore odit inventore dolorem est atque rem sint ipsam, quod corporis, quaerat distinctio quos deserunt sit explicabo incidunt quis? Libero ipsum dolorum labore iusto maiores enim iure sed repudiandae fugit voluptatem est excepturi obcaecati veniam ratione quos impedit, dolores, ad commodi delectus autem deserunt corporis quia culpa. Sunt asperiores tempora odit distinctio molestiae soluta consequatur incidunt possimus, suscipit saepe tenetur recusandae officia? Nihil porro repellendus provident dicta quaerat! Nesciunt iste facere maiores praesentium. Corporis reiciendis quas mollitia deleniti debitis et, dolores cupiditate, ipsum sint eum perspiciatis aperiam molestiae. Dolor, ullam temporibus exercitationem excepturi magnam vitae nihil cum magni? Nihil nemo animi, excepturi tempora minus quae exercitationem sit, dolores odit expedita tempore distinctio error possimus natus iusto! Numquam dicta sit libero vitae distinctio. Qui perspiciatis nulla quidem libero odio maiores beatae ipsa, vitae, sit soluta ea quae, nesciunt quis blanditiis! Asperiores expedita eaque ea ratione odio.</p>
+  <% if(locals.uploadDetail){ %>
+    <h2>Welcome to upload details</h2>
+    <div class="containeer-fluid uploadDiv"><%- uploadDetail.html %> </div>
+    <% } else{ %>
+      <h2>No data uploaded yet!</h2>
+      <% } %>
+<%- include('partials/footerTags.ejs') %>

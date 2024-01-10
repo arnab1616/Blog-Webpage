@@ -1,0 +1,26 @@
+{
+  "name": "dynamic_webapp",
+  "version": "1.0.0",
+  "description": "This my first dynamic webApp",
+  "main": "app.js",
+  "type": "commonjs",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "node",
+    "express",
+    "middlware",
+    "packeges"
+  ],
+  "author": "Arnab Chaulya",
+  "license": "ISC",
+  "dependencies": {
+    "body-parse": "^0.1.0",
+    "bootstrap": "^5.3.2",
+    "dotenv": "^16.3.1",
+    "ejs": "^3.1.9",
+    "express": "^4.18.2",
+    "multer": "^1.4.5-lts.1"
+  }
+}

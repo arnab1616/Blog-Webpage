@@ -1,0 +1,158 @@
+
+body{
+    background-color: var(--bs-body-bg);
+    font-family: Arial, Helvetica, sans-serif;
+}
+.paragaraph {
+    text-align: center;
+    color: gray;
+    font-size: 1.2rem;
+  }
+  .profile {
+    height: 200px;
+    width: 200px;
+    object-fit: cover;
+    border-radius: 50%;
+  }
+.reactLogo{
+    width: 40px;
+    border-radius: 50%;
+}
+nav{
+    position: fixed;
+    background: linear-gradient(#64dde6, #66aedf);
+    display: flex;
+    flex-direction: column;
+    padding-top: 5px;
+    box-shadow: 1px 1px 4px 2px rgb(206, 206, 206);
+    z-index: 1;
+}
+
+nav .topIcons{
+    transition: 0.2s ease-out;
+    box-shadow: 1px 1px 4px 1px rgb(98, 98, 98);
+    margin-left: 15px;
+    padding: 0;
+    border-radius: 10px;
+    background: #b9dedc;
+    padding: 5px 10px;
+    margin-top: 5px;
+}
+nav .topIcons:hover{
+    background: #94dad6;
+}
+.pressed{
+    transform: scale(0.8);
+}
+nav .resLog{
+    margin-left: 2rem;
+    padding: 0;
+    background: whitesmoke;
+    padding: 5px 10px;
+    margin-top: 5px;
+}
+nav .resLog:hover{
+    background: rgb(193, 192, 192);
+}
+.searchBar{
+    transform: translate(0,-50%);
+    transition: 0.2s ease-out;
+    margin-bottom: 5px;
+    width: 30%;
+    
+}
+.searchBar input{
+    box-shadow: 1px 1px 4px 1px rgb(98, 98, 98);
+    border-radius: 0;
+    border-bottom-left-radius: 50px;
+    border-top-left-radius: 50px;
+}
+.searchBar input:focus{
+ background: #ebebeb;
+}
+.searchBar button{
+    /* width: auto; */
+    padding: 5px;
+    background: rgb(116, 116, 116);
+    border: none;
+    border-bottom-right-radius: 50px;
+    border-top-right-radius: 50px;
+}
+.searchBar button svg{
+    color: rgb(255, 255, 255);
+}
+.breadcrumb{
+    transform: translate(20%,0);
+}
+.breadcrumb a{
+    font-size: 1.1rem;
+    font-weight: 500;
+    text-decoration: none;
+    color: rgb(54, 66, 74);
+}
+.breadcrumb a:hover{
+    border-bottom: 2px solid blue;
+}
+.flex-column{
+    background: linear-gradient(200deg,white, grey);
+    /* background-color: rgb(226, 226, 226); */
+    /* opacity: ; */
+    position: fixed;
+    width: 4.3rem;
+    height: 100%;
+    transform: translate(0,8%);
+}
+.flex-column svg{
+    color: rgb(0, 0, 151);
+}
+.flex-column svg:hover{
+    color: blue;
+}
+/* .flex-column a{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    font-size: 0.7rem;
+} */
+.flex-column .nav-link:hover{
+    /* color: blue; */
+    background: rgba(128, 128, 128, 0.158);
+}
+main{
+    text-align: center;
+    position: absolute;
+    top: 120px;
+    left: 120px;
+    /* margin-bottom: 20px; */
+    /* transform: translate(3%,12%); */
+}
+.uploadDiv{
+    display: grid;
+    gap: 20px;
+    grid-template-columns: repeat(4, minmax(auto,1fr));
+}
+.myCard{
+    margin-bottom: 10px;
+    padding: 10px;
+    background: #d8d8d8;
+    text-align: center;
+    box-shadow: 1px 1px 5px 1px grey;
+}
+.myCard p{
+    font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    padding: 5px;
+    margin: 8px;
+}
+.myCard strong{
+    font-size: 1.2rem;
+    font-family:Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+}
+.myCard a{
+    text-decoration: none;
+    border-radius: 5px;
+    background: rgb(244, 175, 25);
+    color: black;
+    padding: 6px 9px;
+    margin-bottom: 10px;
+}

@@ -1,0 +1,25 @@
+</main>
+<script>
+    const doc = document.querySelectorAll('.topIcons');
+    const navLink = document.querySelectorAll('.flex-column a');
+    for(let i=0;i< doc.length;i++){
+        doc[i].addEventListener('click',()=>{
+            doc[i].classList.add('pressed');
+            setTimeout(()=>{
+                doc[i].classList.remove('pressed')
+            },100);
+        });
+    }
+    for(let j=0;j<navLink.length;j++){
+        navLink[j].addEventListener('click',()=>{
+            navLink[j].classList.add('pressed');
+            setTimeout(()=>{
+                navLink[j].classList.remove('pressed')
+            },100);
+        });
+    }
+</script>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
+</body>
+</html>
