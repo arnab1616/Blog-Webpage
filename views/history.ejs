@@ -1,160 +1,126 @@
-<%- include('partials/header.ejs') %>
-<%- include('partials/sidebar.ejs') %>
+<% if(locals.logger){ %>
+  <%- include('partials/header.ejs',{logger}) %>
+  <%- include("partials/sideBar.ejs",{logger}) %>
+<% }else{ %>
+    <%- include('partials/header.ejs') %>
+    <%- include("partials/sideBar.ejs") %>
+<% } %>
 <section id="middle-body-part">
   <div class="container">
-      <div class="grid-elm">
-          <h2 class="work">My work history</h2>
+      <div class="grid-elm " data-bs-toggle="modal" data-bs-target="#taskModal">
+        <svg xmlns="http://www.w3.org/2000/svg" width="50" height="50" fill="currentColor" class="bi bi-cloud-plus-fill" viewBox="0 0 16 16">
+            <path d="M8 2a5.53 5.53 0 0 0-3.594 1.342c-.766.66-1.321 1.52-1.464 2.383C1.266 6.095 0 7.555 0 9.318 0 11.366 1.708 13 3.781 13h8.906C14.502 13 16 11.57 16 9.773c0-1.636-1.242-2.969-2.834-3.194C12.923 3.999 10.69 2 8 2m.5 4v1.5H10a.5.5 0 0 1 0 1H8.5V10a.5.5 0 0 1-1 0V8.5H6a.5.5 0 0 1 0-1h1.5V6a.5.5 0 0 1 1 0"/>
+          </svg>
+          <h2 class="work">Add work history</h2>
+          
       </div>
-      <div class="grid-box fst">
-          <div class="screen-shots">
-              <h2>Screenshot of project</h2>
-          </div>
-          <div class="bottom-cnt">
-              <div class="tb">
-                  <div class="tb-head">
-                      <h3>Project Name</h3>
-                  </div>
-                  <div class="grid-box-icons">
-                      <div class="icon">
-                          <a href="https://github.com/dashboard">
-                              <img class="callocation2" src="./images/github.png" alt="github" style="width: 35px;">
-                          </a>
-                      </div>
-                      <div class="icon">
-                          <a href="https://github.com/dashboard">
-                              <img class="callocation2" src="./images/link.png" alt="link">
-                          </a>
-                      </div>
-                  </div>
-              </div>
-              <p class="sec-para-txt">Short description of project. Just acouple sentences will do. </p>
-          </div>
-      </div>
-      <div class="grid-box scnd">
-          <div class="screen-shots">
-              <h2>Screenshot of project</h2>
-          </div>
-          <div class="bottom-cnt">
-              <div class="tb">
-                  <div class="tb-head">
-                      <h3>Project Name</h3>
-                  </div>
-                  <div class="grid-box-icons">
-                      <div class="icon">
-                          <a href="https://github.com/dashboard">
-                              <img class="callocation2" src="./images/github.png" alt="github" style="width: 35px;">
-                          </a>
-                      </div>
-                      <div class="icon">
-                          <a href="https://github.com/dashboard">
-                              <img class="callocation2" src="./images/link.png" alt="link">
-                          </a>
-                      </div>
-                  </div>
-              </div>
-              <p class="sec-para-txt">Short description of project. Just acouple sentences will do. </p>
-          </div>
-      </div>
-      <div class="grid-box trd">
-          <div class="screen-shots">
-              <h2>Screenshot of project</h2>
-          </div>
-          <div class="bottom-cnt">
-              <div class="tb">
-                  <div class="tb-head">
-                      <h3>Project Name</h3>
-                  </div>
-                  <div class="grid-box-icons">
-                      <div class="icon">
-                          <a href="https://github.com/dashboard">
-                              <img class="callocation2" src="./images/github.png" alt="github" style="width: 35px;">
-                          </a>
-                      </div>
-                      <div class="icon">
-                          <a href="https://github.com/dashboard">
-                              <img class="callocation2" src="./images/link.png" alt="link">
-                          </a>
-                      </div>
-                  </div>
-              </div>
-              <p class="sec-para-txt">Short description of project. Just acouple sentences will do. </p>
-          </div>
-      </div>
-      <div class="grid-box frth">
-          <div class="screen-shots">
-              <h2>Screenshot of project</h2>
-          </div>
-          <div class="bottom-cnt">
-              <div class="tb">
-                  <div class="tb-head">
-                      <h3>Project Name</h3>
-                  </div>
-                  <div class="grid-box-icons">
-                      <div class="icon">
-                          <a href="https://github.com/dashboard">
-                              <img class="callocation2" src="./images/github.png" alt="github" style="width: 35px;">
-                          </a>
-                      </div>
-                      <div class="icon">
-                          <a href="https://github.com/dashboard">
-                              <img class="callocation2" src="./images/link.png" alt="link">
-                          </a>
-                      </div>
-                  </div>
-              </div>
-              <p class="sec-para-txt">Short description of project. Just acouple sentences will do. </p>
-          </div>
-      </div>
-      <div class="grid-box fth">
-          <div class="screen-shots">
-              <h2>Screenshot of project</h2>
-          </div>
-          <div class="bottom-cnt">
-              <div class="tb">
-                  <div class="tb-head">
-                      <h3>Project Name</h3>
-                  </div>
-                  <div class="grid-box-icons">
-                      <div class="icon">
-                          <a href="https://github.com/dashboard">
-                              <img class="callocation2" src="./images/github.png" alt="github" style="width: 35px;">
-                          </a>
-                      </div>
-                      <div class="icon">
-                          <a href="https://github.com/dashboard">
-                              <img class="callocation2" src="./images/link.png" alt="link">
-                          </a>
-                      </div>
-                  </div>
-              </div>
-              <p class="sec-para-txt">Short description of project. Just acouple sentences will do. </p>
-          </div>
-      </div>
-      <div class="grid-box sxth">
-          <div class="screen-shots">
-              <h2>Screenshot of project</h2>
-          </div>
-          <div class="bottom-cnt">
-              <div class="tb">
-                  <div class="tb-head">
-                      <h3>Project Name</h3>
-                  </div>
-                  <div class="grid-box-icons">
-                      <div class="icon">
-                          <a href="https://github.com/dashboard">
-                              <img class="callocation2" src="./images/github.png" alt="github" style="width: 35px;">
-                          </a>
-                      </div>
-                      <div class="icon">
-                          <a href="https://github.com/dashboard">
-                              <img class="callocation2" src="./images/link.png" alt="link">
-                          </a>
-                      </div>
-                  </div>
-              </div>
-              <p class="sec-para-txt">Short description of project. Just acouple sentences will do. </p>
-          </div>
-      </div>
+      <% if(locals.task){ %>
+        <% task.forEach(element => { %>
+            <div class="grid-box">
+                <a href="/view/task/<%= element.id %>" style="text-decoration: none;">
+                    <div class="screen-shots"  for="screenschot" style="background-image: url('<%= element.file %>');">
+                        <h2 class="mb-0">Screenshot of project</h2>
+                        <!-- <div class="d-flex justify-content-between m-0 p-0"> -->
+                          <p class="m-0 " style="font-size: smaller;"><%= element.date%></p>
+                        <!-- </div> -->
+                    </div>
+                    <div class="bottom-cnt">
+                        <div class="tb">
+                            <div class="tb-head">
+                              <div class="m-0 mt-1" style=" display: flex; align-items: center; font-size: smaller; color:rgb(30, 30, 29); text-transform: capitalize;">
+                                <img src="<%= element.pic_url %>" alt="user" height="35" width="35" class="rounded-circle">
+                                <div style="text-align: left; margin-left: 5px;">
+                                  <strong class="m-0 p-0"><%= element.projectname %></strong>
+                                  <p class="m-0 p-0" style="font-size: 0.6rem;">By <%= element.userid %> </p>
+                                </div>
+                              </div>
+                               
+                            </div>
+                            <div class="grid-box-icons">
+                                <div class="icon ">
+                                    <a href="<%= element.reposetry_url %>" class="me-2">
+                                        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" class="bi bi-github" viewBox="0 0 16 16">
+                                            <path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27s1.36.09 2 .27c1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.01 8.01 0 0 0 16 8c0-4.42-3.58-8-8-8"/>
+                                          </svg>
+                                    </a>
+                                </div>
+                                <div class="icon">
+                                    <a href="" class="">
+                                        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" class="bi bi-pencil-square" viewBox="0 0 16 16">
+                                            <path d="M15.502 1.94a.5.5 0 0 1 0 .706L14.459 3.69l-2-2L13.502.646a.5.5 0 0 1 .707 0l1.293 1.293zm-1.75 2.456-2-2L4.939 9.21a.5.5 0 0 0-.121.196l-.805 2.414a.25.25 0 0 0 .316.316l2.414-.805a.5.5 0 0 0 .196-.12l6.813-6.814z"/>
+                                            <path fill-rule="evenodd" d="M1 13.5A1.5 1.5 0 0 0 2.5 15h11a1.5 1.5 0 0 0 1.5-1.5v-6a.5.5 0 0 0-1 0v6a.5.5 0 0 1-.5.5h-11a.5.5 0 0 1-.5-.5v-11a.5.5 0 0 1 .5-.5H9a.5.5 0 0 0 0-1H2.5A1.5 1.5 0 0 0 1 2.5z"/>
+                                          </svg>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="sec-para-txt p-0 px-1" style="overflow: hidden; font-size: small;"> <%= element.description %> </div>
+
+                    </div>
+                    <%   function addZero(i) {
+                        if (i < 10) {i = "0" + i}
+                        return i;
+                      } %>
+                    <% function hour(d){ let h = addZero(d.getHours()); return h; } %>
+                    <% function min(d){ let m = addZero(d.getMinutes()); return m; } %>
+                    <% var Time = (Math.abs(hour(new Date()) - element.houre) *60) + Math.abs(min(new Date()) - element.min); var updateTime = '';  %>
+                    <% if(!Time){ %>
+                        <% updateTime = "Few sec ago" %>
+                    <% } else if(Time >= 1 && Time < 60){ %>
+                        <% updateTime = `${Time} min ago` %>
+                    <% } else if(Time >= 60){ %>
+                        <% updateTime = `${Math.floor(Time/60)} hrs ago` %>
+                    <% } %>
+                    <p class="mb-0" style=" text-transform: lowercase; font-size: 0.7rem; color: rgb(255, 255, 255); position: fixed; top: 5px; left: 5px; text-shadow: 2px 2px 3px black;"> <%= updateTime %></p>
+                </a>
+            </div>
+        <% }) %>
+      <%} else{ %>
+        <h1>No work history</h1>
+      <% } %>
   </div>
 </section>
+
+<div class="modal fade" id="taskModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header py-1">
+          <h1 class="modal-title fs-5" id="exampleModalLabel">Add task history</h1>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body py-0 " style="text-align: left; background: #e4e4e4;">
+          <form action="/add/task" method="post" enctype="multipart/form-data">
+            <div class="mb-1 d-flex align-items-center">
+                <label for="recipient-img" class="col-form-label">Project Screenshot: <span>*</span></label>
+                <input type="file"  name="screenshot" class="form-control" accept="image/*" id="recipient-img" required>
+              </div>
+            <div class="d-flex mb-1 align-items-center">
+                <div class="me-1">
+                    <label for="recipient-project" class="col-form-label">Project Name: <span>*</span></label>
+                    <input type="text"  name="projectname" class="form-control " id="recipient-project" required>
+                  </div class="mb-1">
+                  <div>
+                    <label for="recipient-project" class="col-form-label">Complete Date: <span>*</span></label>
+                    <input type="date"  name="projectdate" class="form-control " id="recipient-project" required>
+                  </div>
+            </div>
+            <div class="mb-1">
+                <label for="recipient-url" class="col-form-label">Reposetry Url: <span>*</span></label>
+                <input type="url"   name="projecturl" class="form-control " id="recipient-url" required>
+            </div>
+            <div class="mb-1">
+              <label for="recipient-description" class="col-form-label">Description:</label>
+                <textarea aria-valuetext="Description" name="description"   class="form-control mb-2" id="recipient-description" cols="10" rows="3"></textarea>
+            </div>
+            <div class="mt-3 mb-2 text-center">
+              <!-- <button type="button" class="btn btn-secondary " data-bs-dismiss="modal">Close</button> -->
+              <button type="submit" class="btn btn-primary">Add</button>
+            </div>
+          </form>
+        </div>
+  
+      </div>
+    </div>
+  </div>
+
 <%- include('partials/footerTags.ejs') %>

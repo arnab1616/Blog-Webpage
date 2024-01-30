@@ -1,0 +1,248 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+    <title>Sign in</title>
+        <style>
+            body{
+                font-family: Arial, Helvetica, sans-serif;
+            }
+            #loginPortal{
+                width: max-content;
+                margin-top: 50px;
+                /* transform: translate(0%,5%); */
+                border: 2px dashed grey;
+                border-radius: 2px;
+                padding-bottom: 10px;
+                box-shadow: 1px 1px  3px 2px rgb(213, 210, 210);
+            }
+            #loginPortal .otherOpt img{
+                width: 40px;
+                height: 40px;
+            }
+            #loginPortal .otherOpt{
+                display: flex;
+                flex-direction: column;
+                margin: 20px 60px;
+            }
+            #loginPortal .otherOpt a{
+                display: flex;
+                align-items: center;
+                justify-content: space-between;
+                text-decoration: none;
+                background: rgb(243, 239, 240);
+                padding: 5px 50px; 
+                margin: 10px;
+                color: black;
+            }
+            /* .title{
+                text-align: center;
+                margin: 0;
+                padding: 0;
+                margin-bottom: 50px;
+                font-size: 1rem;
+                font-weight:normal;
+                color: rgb(78, 78, 78);
+            } */
+            #loginPortal .title{
+        /* transform: translatey(-20%); */
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin-bottom: 50px;
+        background: rgba(245, 222, 179, 0.74);
+        padding: 5px;
+        border-radius: 5px;
+    }
+    .headerText{
+        padding: 0;
+        margin: 0;
+        margin-right: 10px;
+        text-align: center;
+        font-size: 1.4rem;
+        font-weight: 600;
+        text-transform: capitalize;
+        font-family: sans-serif;
+    
+    }
+            #logindetail .userDetail .inputText{
+                margin-top: 15px;
+                margin-bottom: 10px;
+                display: flex;
+                flex-direction: column;
+                margin-left: 10px;
+                margin-right: 10px;
+                padding: 5px;
+            }
+            #logindetail .userDetail .inputText input,textarea{
+                padding: 8px;
+                margin-top: 5px;
+                font-size: 1rem;
+                border-radius: 5px;
+                background: whitesmoke;
+                border: 1px solid gray;
+            }
+            #logindetail .userDetail .name{
+                display: flex;
+                flex-direction: row;
+                justify-content: space-between;
+            }
+            #logindetail .userDetail .name .fstN,.lstN{
+                display: flex;
+                flex-direction: column;
+                /* margin-left: 10px;
+                margin-right: 10px; */
+            }
+            /* #logindetail .userDetail .name .fstN{
+                margin-right: 20px;
+            } */
+            #logindetail .userDetail .inputText .passwordS{
+                display: flex;
+                align-items: center;
+                justify-content: space-between;
+                /* margin-top: 10px; */
+                margin-bottom: 10px;
+            }
+            #logindetail .userDetail .res-log{
+                display: flex;
+                justify-content: center;
+                /* margin: 10px; */
+                /* margin-bottom: 10px; */
+                margin-top: 20px;
+                margin-bottom: 30px;
+            }
+            #logindetail .userDetail .res-log button{
+                width: 100%;
+                padding: 8px;
+                margin: 0 15px;
+                cursor: pointer;
+                border-radius: 5px;
+            }
+            #logindetail .userDetail .res-log .loginBtn{
+                background: rgb(0, 98, 255);
+                border: none;
+                color: white;
+                font-size: 1rem;
+            }
+            #logindetail .userDetail .res-log .loginBtn:hover{
+                background-color: #3752a1;
+            }
+            #logindetail .userDetail .res-log .resetBtn{
+                background: rgb(122, 145, 182);
+                border: none;
+                color: white;
+                font-size: 1rem;
+            }
+            #logindetail .userDetail .res-log .resetBtn:hover{
+                background-color: #6c7d88;
+            }
+            .join{
+        margin: 0;
+        padding: 0;
+        font-size: 0.6rem;
+        text-align: center;
+        color: rgb(174, 174, 174);
+    }
+    span{
+        color: red;
+    }
+    .myCard{
+        padding: 10px;
+        background: #d8d8d8;
+        text-align: center;
+        box-shadow: 1px 1px 5px 1px grey;
+    }
+    .myCard p{
+        font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+        padding: 5px;
+        margin: 8px;
+    }
+    .myCard strong{
+        font-size: 1.2rem;
+        font-family:Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    }
+    .myCard a{
+        text-decoration: none;
+        border-radius: 5px;
+        background: rgb(244, 175, 25);
+        color: black;
+        padding: 6px 9px;
+        margin-bottom: 10px;
+    }
+    .uploadDiv{
+        display: grid;
+        gap: 20px;
+        grid-template-columns: repeat(4, minmax(auto,1fr));
+        /* grid-template-rows: repeat(3, minmax(300px,1fr)); */
+    }
+        </style>
+    </head>
+    <body>
+        <div class="container-xxl my-2" id="loginPortal">
+            
+                <h1 class="headerText">please sign in to</h1>
+            
+            <form class="" action="/resister" method="post" id="logindetail">
+                <section class="userDetail">
+                    <div class="inputText name">
+                        <div class="fstN">
+                            <label for="FirstName">First Name<span>*</span></label>
+                            <input type="text" name="Name" id="firstName" placeholder="Enter Name">
+                        </div>
+                        <div class="lstN">
+                            <label for="Lastname">Last Name<span>*</span></label>
+                            <input type="text" name="Lastname" placeholder="Enter Title">
+                        </div>
+                    </div>
+                    <div class="inputText">
+                        <label for="EmailorPhoneNumber">Email<span>*</span></label>
+                        <input type="email" name="email" placeholder="Enter email id" required>
+                    </div>
+                    <div class="name">
+                        <div class="inputText">
+                            <label for="UserId">User Id<span>*</span></label>
+                            <input type="text" name="username" placeholder="Enter user id " required>
+                        </div>
+                        
+                        <div class="inputText">
+                            <label for="EmailorPhoneNumber">Phone number<span>*</span></label>
+                            <input type="number" name="phoneNumber" placeholder="Enter phone number" required>
+                        </div>
+                    </div>
+
+                    <% if(locals.error){ %>
+                        <p style="color: red; background: #db757567; padding: 5px; text-align: center;"> <%= error %> </p>
+                        <% } %>
+                    <div class="inputText px-4">
+                        <div class="passwordS">
+                            <label for="password">New Password : <span>*</span></label>
+                            <input type="password" name="Password" autocomplete="off" placeholder="Enter new password" required>
+                        </div>
+                        <div class="passwordS">
+                            <label for="password">Confirm Password : <span>*</span></label>
+                            <input type="password" name="cPassword" autocomplete="off" placeholder="Enter confirm password" required>
+                        </div>
+                    </div>
+                    <div class="res-log">
+                        <button type="reset" class="resetBtn">Reset</button>
+                        <button type="submit" class="loginBtn">Sign Up</button>
+                    </div>
+                </section>
+            </form>
+            <hr>
+            <div class="card ">
+                <a class="btn btn-outline-info " href="/auth/google" role="button">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" class="bi bi-google" viewBox="0 0 16 16">
+                        <path d="M15.545 6.558a9.4 9.4 0 0 1 .139 1.626c0 2.434-.87 4.492-2.384 5.885h.002C11.978 15.292 10.158 16 8 16A8 8 0 1 1 8 0a7.7 7.7 0 0 1 5.352 2.082l-2.284 2.284A4.35 4.35 0 0 0 8 3.166c-2.087 0-3.86 1.408-4.492 3.304a4.8 4.8 0 0 0 0 3.063h.003c.635 1.893 2.405 3.301 4.492 3.301 1.078 0 2.004-.276 2.722-.764h-.003a3.7 3.7 0 0 0 1.599-2.431H8v-3.08z"/>
+                    </svg>
+                  Sign Up with Google
+                </a>
+            </div>
+        </div>
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
+    </body>
+    </html>
+</body>
+</html>

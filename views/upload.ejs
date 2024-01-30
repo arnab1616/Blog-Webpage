@@ -1,61 +1,122 @@
-<%- include("partials/header.ejs") %>
-<%- include("partials/sideBar.ejs") %>
-<div class="container" id="loginPortal">
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Upload to server</title>
+    
+    <link rel="stylesheet" href="/styles/upload.css">
+    <!-- <link rel="stylesheet" href="/styles/styleSheet.css"> -->
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Sono:wght@400;700&display=swap">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+</head>
+<body>
+    <main>
+        <div class="container" id="loginPortal">
             
-    <h1 class="headerText">Upload to server </h1>
-
-<form action="/submit" method="post" id="logindetail">
-    <section class="userDetail">
-        <div class="inputText name">
-            <div class="fstN " style="margin-right: 10px;">
-                <label for="firstName">First Name<span>*</span></label>
-                <input type="text" name="fName" id="firstName" placeholder="Enter Name">
-            </div>
-            <div class="lstN" style="margin-left: 10px;">
-                <label for="lastName">Last Name<span>*</span></label>
-                <input type="text" name="lName" id="lastName" placeholder="Enter Title">
-            </div>
-        </div>
-        <div class="name">
-            <div class="inputText x">
-                <label for="UserId ">User id<span>*</span></label>
-                <input type="text" name="username" id="UserId" placeholder="Enter user id" required>
-            </div>
-            <div class="inputText y">
-                <label for="phoneNumber">Phone number<span>*</span></label>
-                <input type="number" name="phoneNumber" id="phoneNumber" placeholder="Enter phone number" required>
-            </div>
-        </div>
-        <div class="name">
-            <div class="inputText" style=" width: 40%;">
-                <label for="email">Email<span>*</span></label>
-                <input type="email" name="email" id="email" placeholder="Enter email " required>
-            </div>
-            <div class="upload" >
-                <label for="uploadImage" style="text-align: center;">Upload image <span>*</span></label>
-                <input type="file" name="file" id="uploadImage" accept=".png">
-            </div>
-        </div>
-        <div class="inputText">
-            <label for="bio">Description </label>
-            <textarea name="bio" id="bio" cols="50" rows="3" placeholder="Description about project" required></textarea>
-        </div>
+            <h1 class="headerText">Upload to server </h1>
         
-        <div class="inputText mx-5">
-            <div class="passwordS">
-                <label for="password">Enter Password : <span>*</span></label>
-                <input type="password" name="Password" id="password" autocomplete="off" placeholder="Enter password" required>
-            </div>
-            <div class="passwordS">
-                <label for="cPassword">Confirm Password : <span>*</span></label>
-                <input type="password" name="cPassword" id="cPassword" autocomplete="off" placeholder="Confirm password" required>
-            </div>
+            <% if(locals.post){ %>
+                <form action="/api/update/posts/<%= post.id %>" method="post"  id="logindetail">
+                    <p class="text-center mt-3">You only able to update Bio, Phone Number & UserId </p>
+                    <section class="userDetail">
+                        <div class="inputText name">
+                            <div class="fstN " style="margin-right: 10px;">
+                                <label for="firstName">First Name<span>*</span></label>
+                                <input type="text" name="fName" value="<%= post.fname %>" id="firstName" placeholder="Enter Name" readonly>
+                            </div>
+                            <div class="lstN" style="margin-left: 10px;">
+                                <label for="lastName">Last Name<span>*</span></label>
+                                <input type="text" name="lName"value="<%= post.lname %>" id="lastName" placeholder="Enter Title" readonly>
+                            </div>
+                        </div>
+                        <div class="name">
+                            <div class="inputText x">
+                                <label for="UserId ">User id<span>*</span></label>
+                                <input type="text" name="username" value="<%= post.username %>" id="UserId" placeholder="Enter user id" required>
+                            </div>
+                            <div class="inputText y">
+                                <label for="phoneNumber">Phone number<span>*</span></label>
+                                <input type="number" name="phoneNumber" value="<%= post.phonenumber %>" id="phoneNumber" placeholder="Enter phone number" required>
+                            </div>
+                        </div>
+                        <div class="name">
+                            <div class="inputText" style=" width: 40%;">
+                                <label for="email">Email<span>*</span></label>
+                                <input type="email" name="email" value="<%= post.email %>"  id="email" placeholder="Enter email " required>
+                            </div>
+                            <div class="upload">
+                                <label for="uploadImage" style="text-align: center;">Upload image <span></span></label>
+                                <input type="file" name="file" id="uploadImage" accept="image/*" disabled>
+                            </div>
+                        </div>
+                        <div class="inputText">
+                            <label for="bio">Description </label>
+                            <textarea name="bio" id="bio" cols="50" rows="3" placeholder="Description about project" required><%= post.bio %></textarea>
+                        </div>
+                        <div class="res-log">
+                            <button type="reset" class="resetBtn">Reset</button>
+                            <button type="submit" class="loginBtn">Update</button>
+                        </div>
+                    </section>
+                </form>
+            <% }else{ %>
+                <form action="/api/upload/posts" method="post" enctype="multipart/form-data" id="logindetail">
+                    <section class="userDetail">
+                        <div class="inputText name">
+                            <div class="fstN " style="margin-right: 10px;">
+                                <label for="firstName">First Name<span>*</span></label>
+                                <input type="text" name="fName" id="firstName" placeholder="Enter Name">
+                            </div>
+                            <div class="lstN" style="margin-left: 10px;">
+                                <label for="lastName">Last Name<span>*</span></label>
+                                <input type="text" name="lName" id="lastName" placeholder="Enter Title">
+                            </div>
+                        </div>
+                        <div class="name">
+                            <div class="inputText x">
+                                <label for="UserId ">User id<span>*</span></label>
+                                <input type="text" name="username" id="UserId" placeholder="Enter user id" required>
+                            </div>
+                            <div class="inputText y">
+                                <label for="phoneNumber">Phone number<span>*</span></label>
+                                <input type="number" name="phoneNumber" id="phoneNumber" placeholder="Enter phone number" required>
+                            </div>
+                        </div>
+                        <div class="name">
+                            <div class="inputText" style=" width: 40%;">
+                                <label for="email">Email<span>*</span></label>
+                                <input type="email" name="email" id="email" placeholder="Enter email " required>
+                            </div>
+                            <div class="upload" >
+                                <label for="uploadImage" style="text-align: center;">Upload image <span>*</span></label>
+                                <input type="file" name="file" id="uploadImage" accept="image/*" required>
+                            </div>
+                        </div>
+                        <div class="inputText">
+                            <label for="bio">Description </label>
+                            <textarea name="bio" id="bio" cols="50" rows="3" placeholder="Description about project" required></textarea>
+                        </div>
+                        
+                        <div class="inputText mx-5">
+                            <div class="passwordS">
+                                <label for="password">Enter Password : <span>*</span></label>
+                                <input type="password" name="Password" id="password" autocomplete="off" placeholder="Enter password" required>
+                            </div>
+                            <div class="passwordS">
+                                <label for="cPassword">Confirm Password : <span>*</span></label>
+                                <input type="password" name="cPassword" id="cPassword" autocomplete="off" placeholder="Confirm password" required>
+                            </div>
+                        </div>
+                        <div class="res-log">
+                            <button type="reset" class="resetBtn">Reset</button>
+                            <button type="submit" class="loginBtn">Upload</button>
+                        </div>
+                    </section>
+                </form>
+            <% } %>
         </div>
-        <div class="res-log">
-            <button type="reset" class="resetBtn">Reset</button>
-            <button type="submit" class="loginBtn">Upload</button>
-        </div>
-    </section>
-</form>
-</div>
-<%- include("partials/footerTags.ejs") %>
+    </main>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
+</body>
+</html>

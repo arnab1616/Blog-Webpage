@@ -1,0 +1,36 @@
+<% if(locals.logger){ %>
+  <%- include('partials/header.ejs',{logger}) %>
+  <%- include("partials/sideBar.ejs",{logger}) %>
+<% }else{ %>
+    <%- include('partials/header.ejs') %>
+    <%- include("partials/sideBar.ejs") %>
+<% } %>
+<%if(locals.weatherDetails){ %>
+
+<section class="location">
+  <div class="city"> <%= weatherDetails.name %>, <%= weatherDetails.sys.country %> </div>
+  <% var currentdate = new Date(); %>
+  <div class="date"> 
+    <%= currentdate %>
+    </div>
+</section>
+<div class="current">
+  <div class="temp"> <%= weatherDetails.main.temp %> <span>°C</span></div>
+  <div class="weather"> <%= weatherDetails.weather[0].main %> </div>
+  <div class="hi-low"><%= weatherDetails.main.temp_min %>°C / <%= weatherDetails.main.temp_max %>°C</div>
+</div>
+
+<% } else{ %>
+
+<section class="location">
+  <div class="city">Purba Medinipur,Dhuliara</div>
+  <div class="date">Thurshday 31 August 2023</div>
+</section>
+<div class="current">
+  <div class="temp">31 <span>°C</span></div>
+  <div class="weather">Cloudy</div>
+  <div class="hi-low">30°C / 32°C</div>
+</div>
+
+<% } %> 
+<%- include("partials/footerTags.ejs") %>

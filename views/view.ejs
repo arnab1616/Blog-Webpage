@@ -1,0 +1,50 @@
+<% if(locals.logger){ %>
+  <%- include('partials/header.ejs',{logger}) %>
+  <%- include("partials/sideBar.ejs",{logger}) %>
+<% }else{ %>
+    <%- include('partials/header.ejs') %>
+    <%- include("partials/sideBar.ejs") %>
+<% } %>
+
+<% if(locals.view){ %>
+    <div class="p-5 text-center bg-body-tertiary rounded-3">
+        <% if(view.file !== ''){ %>
+          <img src="<%= view.img_url %>" alt="your photo" height="200px" width="200px" style="border-radius: 50%;">
+          <% } else{ %>
+            <img src="http://localhost:8000/images/free-react-1-282599.webp" alt="your photo" height="100px" width="100px" style="border-radius: 50%;">
+            <% } %>
+        <h1 class="text-body-emphasis"><%= view.fname %> <%= view.lname %>(<%= view.username %>)</h1>
+        <p class="col-lg-8 mx-auto fs-5 text-muted ">
+            <p><strong>Your Name: </strong><%= view.fname %> <%= view.lname %> </p>
+            <p><strong>Email: </strong> <%= view.email %></p>
+            <p><strong>Phone no. </strong> <%= view.phonenumber %></p>
+            <p><strong>Last update: </strong> <%= view.date %> </p>
+            <p><strong>About you: </strong> <%= view.bio %></p>
+        </p>
+<% } else if(locals.task){ %>
+  <div class="p-5 text-center bg-body-tertiary rounded-3">
+    <% if(task.file){ %>
+      <img src="<%= task.file %>" alt="your photo" height="200px" width="auto">
+      <% } else{ %>
+        <img src="/images/free-react-1-282599.webp" alt="your photo" height="100px" width="100px" style="border-radius: 50%;">
+        <% } %>
+    <p class="col-lg-8 mx-auto fs-5 text-muted ">
+
+        <p><strong>Project Name: </strong><%= task.projectname %></p>
+        <p><strong>Reelease at: </strong> <%= task.date %> <%= task.time%></p>
+        <a href="<%= task.reposetry_url %>">Click here</a>
+        <p><strong>Description </strong> <%= task.description %></p>
+<% } %>
+<div class="d-inline-flex gap-2 mb-5">
+  <button class="d-inline-flex align-items-center btn btn-primary btn-lg px-4 rounded-pill" type="button">
+    Call to action
+    <svg class="bi ms-2" width="24" height="24"><use xlink:href="#arrow-right-short"></use></svg>
+  </button>
+  <button class="btn btn-outline-secondary btn-lg px-4 rounded-pill" type="button">
+    Secondary link
+  </button>
+</div>
+<p><strong>Note ->> </strong>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Aperiam quasi deleniti totam, quo odio quaerat mollitia tempore. Aliquam perferendis maiores praesentium numquam, quam pariatur, saepe excepturi optio omnis, nulla atque!Lorem Lorem ipsum dolor sit amet consectetur, adipisicing elit. Rem qui assumenda hic? Ipsum magni voluptatum quia totam odit qui similique eveniet sit mollitia est? Asperiores, ullam aspernatur provident quos nihil, autem aliquid porro veritatis officiis vitae tempore illo, incidunt magnam velit vel! Atque voluptate voluptatum sed laboriosam quae. Doloribus, qui. Labore aliquid voluptatem modi, commodi officia aut exercitationem unde. Sint aut nulla non dolore commodi animi dicta omnis qui eligendi tempore nihil nostrum sed, asperiores fugit impedit quaerat molestias corporis atque, voluptatem ipsa ducimus adipisci deserunt? Natus ipsum sed, dolores rerum ducimus ex blanditiis, dolor repellat, cumque voluptate accusantium quibusdam. Lorem, ipsum dolor sit amet consectetur adipisicing elit. Similique minima mollitia sequi error culpa nobis possimus officia, quasi, quo architecto corrupti laboriosam debitis minus exercitationem dolore, voluptates eum non odit!</p>
+</div>
+
+<%- include("partials/footerTags.ejs") %>
